@@ -9,9 +9,9 @@ import org.jetbrains.anko.uiThread
 
 
 class MoviesPresenter (private val movieview:MoviesView, private val apiRepository:TMDBApiRepository){
-    fun getMovieList(){
+    fun getTopRatedMovieList(){
         doAsync{
-            val data=Gson().fromJson(apiRepository.makeRequest(TMDBApi.getMovie()),MoviesResponse::class.java)
+            val data=Gson().fromJson(apiRepository.makeRequest(TMDBApi.getTopRatedMovie()),MoviesResponse::class.java)
 
             uiThread{
                 movieview.showMovieList(data.results)

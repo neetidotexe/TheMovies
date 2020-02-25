@@ -1,11 +1,14 @@
 package com.example.themovies.network
 
-import com.example.themovies.BuildConfig.API_KEY
-import com.example.themovies.BuildConfig.BASE_URL
+import com.example.themovies.BuildConfig.*
 
 object TMDBApi {
-    fun getMovie():String{
-        return BASE_URL + API_KEY
+    fun getTopRatedMovie():String{
+        return BASE_URL_TOP_RATED + API_KEY
+    }
+
+    fun getPopulardMovie():String{
+        return BASE_URL_POPULAR + API_KEY
     }
 
 

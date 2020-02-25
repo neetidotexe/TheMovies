@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), MoviesView {
         setContentView(R.layout.activity_main)
 
         presenter= MoviesPresenter(this, TMDBApiRepository())
-        presenter.getMovieList()
+        presenter.getTopRatedMovieList()
 
         recyclerView=findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager=GridLayoutManager(this,3)
