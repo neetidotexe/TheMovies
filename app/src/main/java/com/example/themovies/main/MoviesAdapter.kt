@@ -1,12 +1,15 @@
 package com.example.themovies.main
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.themovies.BuildConfig.URL_POSTER
@@ -30,6 +33,14 @@ class MoviesAdapter(private val result:List<Movies>, private val context: Contex
         Glide.with(context)
             .load(URL_POSTER + result[position].posterPath)
             .into(holder.movieImage)
+
+        holder.movieImage.setOnClickListener {
+            val intent= Intent(context,MovieDetailActivity::class.java)
+            intent.putExtra("Overview",result[position].overview)
+            intent.putExtra("Title",result[position].title)
+            intent.putExtra("BackdropPath",URL_POSTER + result[position].backdropPath)
+            startActivity(context,intent,null)
+        }
     }
 
     class MovieViewHolder(viewHolder: View):RecyclerView.ViewHolder(viewHolder){

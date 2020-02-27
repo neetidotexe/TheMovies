@@ -8,6 +8,9 @@ data class Movies (
     val overview:String,
 
     @SerializedName("poster_path")
-    var posterPath : String
+    var posterPath : String,
+
+    @SerializedName("backdrop_path")
+    var backdropPath : String
 )
 
