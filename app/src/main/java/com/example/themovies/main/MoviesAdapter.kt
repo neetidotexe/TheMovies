@@ -39,6 +39,8 @@ class MoviesAdapter(private val result:List<Movies>, private val context: Contex
             intent.putExtra("Overview",result[position].overview)
             intent.putExtra("Title",result[position].title)
             intent.putExtra("BackdropPath",URL_POSTER + result[position].backdropPath)
+            intent.putExtra("ReleaseDate",result[position].release_date)
+            intent.putExtra("Rating",result[position].vote_average)
             startActivity(context,intent,null)
         }
     }

@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.themovies.BuildConfig
 import com.example.themovies.R
+import org.jetbrains.anko.find
 
 class MovieDetailActivity : AppCompatActivity() {
 
@@ -24,10 +25,16 @@ class MovieDetailActivity : AppCompatActivity() {
 
 
             val text_movieName: TextView = findViewById(R.id.text_movieName)
-            text_movieName.setText(intent.getStringExtra("Title")).toString()
+            text_movieName.setText(intent.getStringExtra("Title"))
+
+            val text_releaseDate:TextView=findViewById(R.id.text_releaseDate)
+            text_releaseDate.setText(intent.getStringExtra("ReleaseDate"))
+
+            val text_rating:TextView=findViewById(R.id.text_rating)
+            text_rating.setText(intent.getStringExtra("Rating"))
 
             val text_movieOverview:TextView=findViewById(R.id.text_movieOverview)
-            text_movieOverview.setText(intent.getStringExtra("Overview")).toString()
+            text_movieOverview.setText(intent.getStringExtra("Overview"))
         }
         catch (ex:Exception){
             val toast= Toast.makeText(this,ex.message,Toast.LENGTH_LONG)
