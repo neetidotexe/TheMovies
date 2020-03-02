@@ -11,5 +11,4 @@ object TMDBApi {
         return BASE_URL_POPULAR + API_KEY
     }
 
-
 }
